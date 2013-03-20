@@ -1,0 +1,89 @@
+.. |(version)| replace:: 1.24
+
+=======
+ Geany
+=======
+
+---------------------------------------------------------
+Eine schnelle, leichtgewichtige, Gtk-Entwicklungsumgebung
+---------------------------------------------------------
+
+:Autoren: Enrico Tröger,
+          Nick Treleaven,
+          Frank Lanitz,
+          Colomban Wendling,
+          Matthew Brush
+:Datum: 2013-03-10
+:Version: |(version)|
+
+Copyright © 2005-2013
+
+This document is distributed under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version. A copy of this
+license can be found in the file COPYING included with the source code
+of this program, and also in the chapter `GNU General Public License`_.
+
+.. contents::
+
+
+
+Einleitung
+==========
+
+Über Geany
+----------
+
+Geany ist eine schnelle und leichtgewichtige, integrierte
+Entwicklungsumgebung (IDE). Es wurde mit dem Ziel entwickelt, dieses
+Ziel durch wenige Abhängigkeiten zu anderen Paketen zu erfüllen. Zusätzlich wurde darauf Wert gelegt, dass die Entwicklung möglichst unabhängig von großen Desktopumgebungen wie KDE oder GNOME statt finden. So benötigt Geany nur die Gtk2-Bibliotheken, um ausgeführt werden zu können.
+
+Einige grundlegende Funktionen von Geany sind dabei:
+
+* Hervorhebung im Quellcode
+* Ein- und Ausblenden von Teilen von Quellcode
+* Autovervollständigung von Symbolen (Variablen, Funktionsnamen etc.)
+  und Wörtern
+* Konfigurierbare Quellcodeschnipsel zum einfachen Einfügen
+* Automatisches Schließen von XML- und HTML-Tags
+* Calltips
+* Eine große Zahl von unterstützen Dateitypen wie C, Java, PHP, HTML,
+  Python, Perl, Pascal und anderen
+* Symbol-Liste
+* Einfache Navigation durch den Quellcode
+* Direktes aufrufe des Buildsystemes zum Übersetzen von Quellcode
+* Eine einfache Projektverwaltung
+* Schnittstelle für Erweiterungen
+
+Bezugsquellen
+-------------
+
+Geany kann von http://www.geany.org herunter geladen werden. Oftmals
+kann Geany auch aus den Archiven von (Linux-)Distributionen herunter
+geladen werden. Eine Liste mit verfügbaren Paketen gibt es zum
+Beispiel unter http://www.geany.org/Download/ThirdPartyPackages.
+
+Lizenz
+------
+
+Geany is distributed under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version. A copy of this
+license can be found in the file COPYING included with the source
+code of this program and in the chapter, `GNU General Public License`_.
+
+The included Scintilla library (found in the subdirectory
+``scintilla/``) has its own license, which can be found in the chapter,
+`License for Scintilla and SciTE`_.
+
+Über dieses Dokument
+--------------------
+
+Diese Dokumentation ist in HTML und reinen Text verfügbar. Die
+jeweils aktuelle Version kann unter http://www.geany.org/ gefunden
+werden.
+
+If you want to contribute to it, see `Contributing to this document`_.
+
+
+
