@@ -86,4 +86,60 @@ werden.
 If you want to contribute to it, see `Contributing to this document`_.
 
 
+Installation
+============
 
+
+Anforderungen
+-------------
+
+Um Geany zu installieren benötigt man Gtk (>= 2.16.0), Pango, Glib
+sowie ATK. Die meisten (Linux-)Distributionen sollten diese Pakete
+über ihre Paketverwaltungen zur Verfügung stellen. In vielen Fällen
+sind diese sogar bereits installiert. Alternativ kann man sie übter
+http://www.gtk.org herunter laden.
+
+Der Windows-Installer bringt bereits alle benötigten Bibliotheken
+zusammengefasst in einem Paket mit.
+
+
+Binär-Pakete
+------------
+
+Es sind eine Reihe von binären Paketen von Geany verfügbar. Eine
+Liste gibt es unter http://www.geany.org/Download/ThirdPartyPackages.
+
+
+Geany aus den Quellen übersetzen
+--------------------------------
+
+Geany aus den Quellen zu übersetzen ist relativ einfach. Dafür
+benötigt man die bereits erwähnten Bibliotheken (Gtk >= 2.16.0,
+Pango, Glib, ATK) sowie deren Header-Dateien. Diese sind entweder über
+http://www.gtk.org oder über das jeweilige Paketverwaltungssystem
+verfügbar. Der zweitere Weg ist in der Regel der einfachere.
+
+Natürlich benötigt man noch einen C- und einen C++-Compiler. Die
+Implementierungen des GNU-Projektes (gcc) wird dabei vom Geany-Team
+empfohlen.
+
+Autotools build-System
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Geany kann mit dem altbewehrten Autotools-build-System übersetzt
+werden. Dieses ist gut getestet und benötigt Make. Auch hier wird die
+Version GNU-Projektes -- GNU Make -- empfohlen.
+
+Um den Vorgang zu starten, muss zuerst ::
+
+    $ ./configure
+    $ make
+
+ausgeführt werden. Danach dann als root::
+
+    % make install
+
+Wird auf dem System sudo verwendet, sollte make mit sudo aufgerufen
+werden::
+
+    % sudo make install
