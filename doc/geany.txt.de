@@ -143,3 +143,81 @@ Wird auf dem System sudo verwendet, sollte make mit sudo aufgerufen
 werden::
 
     % sudo make install
+
+
+Die Waf-basierende Übersetzung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Das Waf-build-System ist ein relativ junges Projekt, welches no eine
+recht aktive Entwicklung erfährt, dennoch schon in einem recht
+anwendbaren Zustand ist.
+Im Vergleich zu den Autotools, basiert Waf auf Python. So sollte
+zuerst Python installiert werden. Danach kann man die Vorteile von Waf
+gegenüber der Autotools genießen:
+Der Übersetzungsprozess ist schneller. Insbesondere, wenn der
+Zwischenspeicher zum Einsatz kommt, so dass bei Änderungen an einer
+Datei nicht zwingend alle anderen ebenfalls neu übersetzt werden
+müssen, nur eine Änderung zu testen. Waf erinnert sich an die
+vorherigen Ergebnisse und beschleunigt so den gesamten
+Übersetzungsprozess. Dateils dazu gibt es unter`Waf Cache`_.
+
+Um Geany nun mit Waf zu übersetzen, muss man wie folgt vorgehen:::
+
+    $ ./waf configure
+    $ ./waf build
+
+Schließlich als root dann Geany installieren::
+
+    % ./waf install
+
+Bei der Nutzung von sudo natürlich dann::
+
+    % sudo ./waf install
+
+
+Waf cache
+`````````
+Das Waf-Build-System hat eine sehr nützliche Funktionalität, die
+helfen kann, unnötige Übersetzungsvorgänge von unveränderten
+Quellcode zu verhindern, wie es sehr oft bei der Entwicklung von
+neuen Funktionen oder anderen kleinen Änderungen vorkommt. Waf ist
+in der Lage, sich an bereits übersetzt Objekt-Dateien über einen
+Cache zu erinnern und diese bei einem späteren Übersetzungsvorgang
+wieder zu verwenden. Der dazu genutzte Cache kann über die Variable
+``WAFCACHE`` konfiguriert werden.
+
+Ein möglicher Pfad für den Cache könnte ``~/.cache/waf``. Um diesen
+zu nutzen, sollte das Verzeichnis zuerst angelegt werden::
+
+    $ mkdir -p ~/.cache/waf
+
+Danach sollte die Umgebungsvariable gesetzt werden::
+
+    export WAFCACHE=/home/username/.cache/waf
+
+Natürlich muss ``username`` noch durch den tatsächlichen Nutzer
+ersetzt werden.
+
+Mehr Informationen über den Funktionsumfang des Waf-Caches kann man
+auf den Projektseiten unter
+http://code.google.com/p/waf/wiki/CacheObjectFiles finden.
+
+Den Cache leeren
+******************
+
+Die Größe des Cache-Verzeichnis wächst mit der Zeit und kann bei
+häufiger Verwendung relativ groß werden und sollte deshalb im Auge
+behalten werden -- Waf an sich, führt keine Aufräumarbeiten
+innerhalb dieses Verzeichnisses aus.
+
+Um diese Aufgabe zu erledigen, kann man in regelmäßigen Abständen
+den Befehl ausführen::
+
+    $ find /home/username/.cache/waf -mtime +14 -exec rm {} \;
+
+Wobei natürlich der Pfad sowie die Zeit ``mtime`` in Tagen angepasst
+werden sollte. Das obere Beispiel löscht alle Einträge innerhalb von
+``/home/username/.cache/waf``, die sich seit mindestens 14 Tagen nicht
+mehr geändert haben. Details zu ``find`` gibt es in dessen
+Handbuchseiten.
+
