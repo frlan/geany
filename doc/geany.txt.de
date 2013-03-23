@@ -221,3 +221,19 @@ werden sollte. Das obere Beispiel löscht alle Einträge innerhalb von
 mehr geändert haben. Details zu ``find`` gibt es in dessen
 Handbuchseiten.
 
+Angepasste Installationen
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Das ``configure``-Skript unterstützt verschiedene, übliche Optionen.
+Eine detailliserte Liste gibt es über::
+
+    $ ./configure --help
+
+bzw. bei der Benutzung von ``waf`` über::
+
+    $ ./waf --help
+
+Ferner gibt es in der Datei ``INSTALL`` weitere Tipps für die
+Installation. Interessant dazu ist auch der Punkt `Compile-time
+options`_. aus dieser Anleitung.
+
