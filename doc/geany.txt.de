@@ -232,3 +232,51 @@ Ferner gibt es in der Datei ``INSTALL`` weitere Tipps für die
 Installation. Interessant dazu ist auch der Punkt `Compile-time
 options`_. aus dieser Anleitung.
 
+
+Dynamisches Laden von Bibiotheken und die VTE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wenn das Zielsystem das keine Unterstützung für das ``dynamic
+linking`` bietet, kann mit der Option ``--disable-vte`` während des
+``configure``-Laufs die Unterstützung dafür abgeschaltet werden. In
+Folge dessen, wird Geany dann nicht nach ``libvte.so.4`` suchen und
+versuchen, diese zu laden.
+
+Probleme beim Übersetzen
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sollte es bei der Übersetzung zu Problemen kommen, sollte zuerst die
+entsprechende Umgebung überprüft werden. In vielen Fällen liegt die
+Ursache in einer nicht sauberen oder nicht korrekt aufgesetzt
+Übersetzungsumgebung. Sollte sich das Problem auch nach sorgsamer
+Überprüfung nicht lösen lassen, steht eine Mailingliste für die
+Kontaktaufnahme bzw. die Autoren direkt zur Verfügung. Ab und an
+kommt es aber auch vor, dass die Proleme durch Besonderheiten der
+verwendeten (Linux-)Distrubution ausgelöst werden. Ein Blick in die
+entsprechende Dokumentation hilft also ab und an ebenfalls weiter.
+
+
+Installationspfad
+-----------------
+
+Im Standard wird Geany unter unixoiden Systemen nach ``/usr/local``
+installiert. Soll Geany in einen anderen Pfad installiert werden, kann
+man diesen beim Übersetzungsvorgang übergeben.
+
+Auf der anderen Seite stellt sich ab und an die Frage, wohin Geany
+eigentlich installiert wurde. Zum Beispiel, wenn man Geany aus einem
+Distributionspaket installiert hat. Um dies heraus zu finden, bietet
+Geany die Kommandozielen-Option ``--print-prefix``, die als erstes
+Ergebnis den Installations-Basis-Pfad von Geany anzeigt. Mehr
+`Kommandozielenoptionen`_, gibt es im entsprechenden Abschnitt dieser
+Dokumentation.
+
+.. note::
+    In den meisten Fällen wird es nicht notwendig sein, die
+    eigentlichen System-Dateien von Geany anzupassen. Für jeden Nutzer
+    könnnen Änderungen über das lokale Konfigurationsverzeichnis zur
+    Verfügung gestellt werden. Siehe dazu auch`Configuration files`_.
+
+
+Verwendung
+==========
